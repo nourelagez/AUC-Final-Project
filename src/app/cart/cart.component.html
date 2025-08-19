@@ -1,0 +1,34 @@
+
+<div class="container section">
+  <h2 class="mb-4">🛒 Your Cart</h2>
+
+  <div *ngIf="data.cart.length === 0" class="alert alert-warning">
+    Your cart is empty. Browse products and add some!
+  </div>
+
+  <div *ngFor="let item of data.cart" class="cart-item row align-items-center mb-3">
+    <div class="col-md-2">
+      <img [src]="item.images[0]" class="w-100 rounded shadow-sm">
+    </div>
+    <div class="col-md-4">
+      <h5>{{item.title}}</h5>
+      <p class="text-muted">{{item.category}}</p>
+    </div>
+    <div class="col-md-3 d-flex align-items-center">
+      <button class="btn btn-sm btn-outline" (click)="decreaseQty(item)">-</button>
+      <span class="px-3">{{item.qty}}</span>
+      <button class="btn btn-sm btn-outline" (click)="increaseQty(item)">+</button>
+    </div>
+    <div class="col-md-2 fw-bold">
+      ${{item.price * item.qty}}
+    </div>
+    <div class="col-md-1">
+      <button class="btn btn-sm btn-danger" (click)="removeItem(item)">✕</button>
+    </div>
+  </div>
+
+  <div *ngIf="data.cart.length > 0" class="mt-4 text-end">
+    <h4>Total: ${{ total }}</h4>
+    <button class="btn btn-primary">Proceed to Checkout</button>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<form class="container-fluid bg-light p-5" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <label for="userName">User Name: :</label>
+    <input type="text" name="userName" id="userName" class="form-control" formControlName="username">
+     <div class="alert alert-danger" role="alert" *ngIf="loginForm.controls
+.username.invalid&&loginForm.controls
+.username.touched
+">
+<strong>Please Enter Valid Data</strong>
+     </div>
+    <label for="password">Password :</label>
+    <input type="text" name="password" id="password" class="form-control" formControlName="password">
+    <button class="btn btn-success mt-3" [disabled]="loginForm.invalid&&loginForm.touched">Login</button>
+</form>

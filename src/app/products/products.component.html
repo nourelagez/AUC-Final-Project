@@ -1,0 +1,26 @@
+<div class="container my-4">
+  <h2 class="text-center mb-4">{{ categoryName | titlecase }}</h2>
+
+  <div class="row g-4 justify-content-center">
+    <div
+      class="col-md-4 d-flex justify-content-center"
+      *ngFor="let product of products"
+    >
+      <div
+        class="card h-100 shadow-sm text-center w-100"
+        style="cursor: pointer;"
+        [routerLink]="['/singleProduct', product.id]"
+      >
+        <img
+          [src]="product.thumbnail"
+          class="card-img-top product-img"
+          [alt]="product.title"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <p class="card-text">${{ product.price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

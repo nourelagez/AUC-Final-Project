@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg bg-white">
+  <div class="container-fluid">
+    <a class="navbar-brand">MyShop</a>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="login">
+       <li class="nav-item">
+          <a class="nav-link" routerLink="home" routerLinkActive="active">Home</a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="category" routerLinkActive="active">Categories</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item" *ngIf="!login">
+          <a class="nav-link" routerLink="register" routerLinkActive="active">Register</a>
+        </li>
+        <li class="nav-item" *ngIf="!login">
+          <a class="nav-link" routerLink="login" routerLinkActive="active">Login</a>
+        </li>
+
+        <li class="nav-item" *ngIf="login">
+          <a class="nav-link" (click)="logOut()">Logout</a>
+        </li>
+      <li class="nav-item" *ngIf="login">
+  <a class="nav-link position-relative" routerLink="cart" routerLinkActive="active">
+    <i class="bi bi-cart3 fs-5"></i>
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+      {{ getCartCount() }}
+    </span>
+  </a>
+</li>
+      </ul>
+    </div>
+  </div>
+</nav>

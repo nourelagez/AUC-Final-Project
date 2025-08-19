@@ -1,0 +1,17 @@
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.product-img {
+  width: 100%;
+  height: 250px; /* controls size */
+  object-fit: contain; /* ensures image fits inside */
+  background: #f9f9f9; /* subtle background */
+  padding: 10px;
+}

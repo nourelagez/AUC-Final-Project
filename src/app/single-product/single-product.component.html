@@ -1,0 +1,15 @@
+<div class="container-fluid bg-light vh-100">
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-12 p-5">
+    <img [src]="singleProduct.images[0]" alt="" class="w-100">
+</div>
+<div class="col-lg-6 col-md-6 col-sm-12 p-5">
+<h2>{{singleProduct.title}}</h2>
+<h3>{{singleProduct.price}} $ + Free Shippping</h3>
+<p>{{singleProduct.description}}</p>
+<input type="number" name="" id="" [(ngModel)]="amount"><br><br>
+<button class="btn btn-success me-2" (click)="addToCart()">Add To Cart</button>
+<button class="btn btn-danger" (click)="removeFromCart()">Remove From Cart</button>
+</div>
+</div>
+</div>

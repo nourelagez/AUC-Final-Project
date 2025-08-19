@@ -1,0 +1,7 @@
+form.container-fluid {
+  display: flex; flex-direction: column; justify-content: top; align-items: center;
+}
+
+form.container-fluid > * { max-width: 560px; width: 100%; }
+label { font-weight: 600; margin-top: .5rem; }
+button { margin-top: .75rem; }
